@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Solution BD - Smart Business Management</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo & Business Name -->
+            <div class="flex items-center gap-4">
+                <div class="text-blue-600 text-4xl">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="pl-2 md:block">
+                    <h2 class="font-bold text-slate-800">Parvez Sewing & Servicing Center</h2>
+                    <p class="text-xs text-slate-500">Sales, Service & Rent Center</p>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-2 font-medium">
+                <a href="#home"
+                    class="nav-link text-blue-600 bg-blue-50 px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#about"
+                    class="nav-link text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+                <a href="#features"
+                    class="nav-link text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                    <i class="fas fa-star"></i> Features
+                </a>
+                <a href="#pricing"
+                    class="nav-link text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                    <i class="fas fa-tag"></i> Pricing
+                </a>
+                <a href="#contact"
+                    class="nav-link text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </nav>
+
+            <!-- Login Button -->
+            <div>
+                <a href="login.html"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors flex items-center gap-2">
+                    <i class="fas fa-user"></i> Login
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white relative overflow-hidden">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-12">
+            <!-- Left Text Content -->
+            <div class="lg:w-1/2 z-10">
+                <span
+                    class="inline-block bg-green-500/20 text-green-400 border border-green-500/30 px-3 py-1 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-circle text-xs mr-1"></i> Smart Business Management
+                </span>
+                <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Manage Your Business <br>
+                    <span class="text-yellow-400">Smarter & Easier</span>
+                </h1>
+                <p class="text-lg text-blue-100 mb-8 max-w-lg">
+                    A complete business management solution for Sewing & Servicing Center, with modern dashboard,
+                    customer management, repair tracking and more...
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#"
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg transition-colors flex items-center gap-2 shadow-lg shadow-blue-500/30">
+                        <i class="fas fa-rocket"></i> Get Started Free &rarr;
+                    </a>
+                    <a href="#"
+                        class="bg-transparent border border-blue-300 hover:bg-blue-800/50 text-white px-8 py-3 rounded-full font-bold text-lg transition-colors flex items-center gap-2">
+                        <i class="far fa-play-circle text-xl"></i> Watch Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Mockup -->
+            <div class="lg:w-1/2 relative z-10">
+                <!-- Replace with your actual laptop mockup image url -->
+                <div class="bg-slate-800 rounded-xl p-2 border-4 border-slate-700 shadow-2xl relative">
+                    <div class="bg-slate-900 rounded-lg aspect-video flex items-center justify-center overflow-hidden">
+                        <p class="text-slate-500">Laptop Mockup Image Here</p>
+                    </div>
+                    <!-- Base of laptop -->
+                    <div class="h-4 bg-slate-400 mt-2 rounded-b-xl mx-[-8px]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about sections -->
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-2">আমাদের সম্পর্কে</h2>
+                <p class="text-slate-600 text-lg">Empowering Your Business Since 2016</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+                <!-- Left Content: Image & Text -->
+                <div>
+                    <!-- Image Card -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg mb-6 group">
+                        <!-- Replace with your actual image -->
+                        <div class="h-64 sm:h-80 bg-slate-300 w-full relative">
+                            <!-- Overlay Text -->
+                            <div class="absolute inset-0 bg-black/30 flex items-start justify-center pt-6">
+                                <h3 class="text-white text-xl sm:text-2xl font-bold tracking-wide">Our Mission & Journey
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description Text -->
+                    <p class="text-slate-600 leading-relaxed text-justify">
+                        Parvez Sewing & Servicing Center এবং প্রতিষ্ঠানের শুরুর গল্প সংক্ষেপে। PCB Solution BD-এর মত
+                        স্বনামধন্য আধুনিক সেলাই মেশিনের সার্ভিস, আইটি সলিউশনের আধুনিক কাজের ধারা কাজের মান। আধুনিক সেলাই
+                        মেশিনের সাথে এ এক নতুন যাত্রা। এই সেন্টারে লেখা বার কোডসমূহের Parvez Sewing & Servicing Center
+                        এবং PCB Solution-দাতা হার্ডওয়্যার আইটি...
+                    </p>
+                </div>
+
+                <!-- Right Content: Info & Buttons -->
+                <div class="space-y-8">
+
+                    <!-- Info Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+                        <!-- Block 1 -->
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2">Who We Are</h4>
+
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl shrink-0">
+                                    <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">10+ Years of Experience</h5>
+                                    <p class="text-slate-600 text-sm">১ দশকেরও বেশি কাজের অভিজ্ঞতা</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl shrink-0">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Advanced Repair & Tech Sols</h5>
+                                    <p class="text-slate-600 text-sm">আধুনিক সেলাই মেশিন ও প্রযুক্তিগত সার্ভিস</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Block 2 -->
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-4 border-b pb-2">What We Do</h4>
+
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl shrink-0">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Trusted by Hundreds of Businesses</h5>
+                                    <p class="text-slate-600 text-sm">শত শত ব্যবসায়ের বিশ্বস্ত অংশীদার</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-lg text-xl shrink-0">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Committed to Excellence</h5>
+                                    <p class="text-slate-600 text-sm">সেরা মানের নিশ্চয়তা ও গ্রাহক সেবা</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4 border-t border-slate-200">
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition-colors">
+                            Read Our Full Story
+                        </a>
+                        <a href="#"
+                            class="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full font-medium transition-colors">
+                            Meet the Team
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mid Section (Features & Grow Business) -->
+    <!-- Notic: The middle icon row has been removed as per your request -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Trust Image Box -->
+            <div class="bg-slate-900 rounded-2xl overflow-hidden relative group">
+                <div class="absolute inset-0 bg-black/40 z-10"></div>
+                <div class="absolute bottom-6 left-6 z-20">
+                    <h3 class="text-white text-3xl font-bold italic leading-tight">
+                        Your Trusted <br> <span class="text-yellow-400">Business Partner</span>
+                    </h3>
+                </div>
+                <!-- Placeholder for sewing machine image -->
+                <div class="h-64 bg-slate-700 w-full object-cover"></div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col justify-center">
+                <h3 class="text-2xl font-bold mb-6 text-slate-800">Why Choose <span class="text-blue-600">Our
+                        System?</span></h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-slate-700 font-medium">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i> Easy to Manage Customers & Services
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 font-medium">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i> Track Repairs & Inventory Efficiently
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 font-medium">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i> Get Detailed Reports & Insights
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 font-medium">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i> Secure & User Friendly Interface
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 font-medium">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i> Perfect for Small & Medium Business
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Grow Your Business CTA -->
+            <div
+                class="bg-blue-50 rounded-2xl p-8 border border-blue-100 flex flex-col justify-center relative overflow-hidden">
+                <i class="fas fa-handshake text-blue-200 text-8xl absolute top-4 -right-4 opacity-50"></i>
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold mb-3 text-slate-900">Grow Your Business with <span
+                            class="text-blue-700 block">PCB Solution BD</span></h3>
+                    <p class="text-slate-600 mb-6 font-medium">Start managing your business the smart way. Save time,
+                        reduce effort, and increase productivity.</p>
+                    <a href="#"
+                        class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                        Get Started Today &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-8">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+
+            <!-- Footer Logo -->
+            <div class="flex items-center gap-3">
+                <div class="text-blue-500 text-3xl">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div>
+                    <h2 class="font-bold text-white text-lg leading-tight">PCB Solution BD</h2>
+                    <p class="text-xs text-slate-400">Service & Sales Center</p>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <div class="flex items-center gap-2">
+                    <a href="https://maps.app.goo.gl/88xLqZZbruEMLzvP8" target="_blank"><i class="fas fa-map-marker-alt text-blue-500"></i> Shahibag, Savar, Dhaka-1340</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone text-blue-500"></i> 01777-5235332
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-envelope text-blue-500"></i> pssctech@gmail.com
+                </div>
+            </div>
+
+            <!-- Copyright & Socials -->
+            <div class="flex items-center gap-6 text-sm">
+                <p>&copy; 2026 PCB Solution BD. All rights reserved.</p>
+                <div class="flex gap-3 text-xl">
+                    <a href="https://www.facebook.com/pssctech" class="text-slate-400 hover:text-white"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@parvezahmed2156" class="text-slate-400 hover:text-white"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/+8801775235332" class="text-slate-400 hover:text-white"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

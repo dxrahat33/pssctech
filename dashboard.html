@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSSC TECH - Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        sidebar: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans h-screen flex overflow-hidden selection:bg-blue-200">
+
+    <!-- Sidebar -->
+    <aside
+        class="w-64 bg-sidebar text-slate-300 flex-shrink-0 flex flex-col h-full hidden md:flex z-20 shadow-xl transition-all duration-300">
+        <!-- Logo -->
+        <div class="h-20 flex items-center px-6 border-b border-slate-700/50 bg-slate-900/50">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white shadow-lg">
+                    <i class="fas fa-cogs text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-white font-bold text-sm tracking-wide leading-tight">Parvez Sewing & Servicing
+                        Center</h1>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-wider">Service & Sales Center</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 bg-blue-600 text-white rounded-lg shadow-md shadow-blue-500/20 group transition-all">
+                <i class="fas fa-home w-5 text-center text-blue-200 group-hover:text-white transition-colors"></i>
+                <span class="font-medium text-sm">Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i class="fas fa-users w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Customers</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i
+                    class="fas fa-microchip w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Devices / Machines</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i
+                    class="fas fa-clipboard-list w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Service Requests</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i class="fas fa-wrench w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Repairs</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i class="fas fa-boxes w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Inventory</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i class="fas fa-cogs w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Parts Used</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i
+                    class="fas fa-shopping-bag w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Sales</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i
+                    class="fas fa-hand-holding-usd w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Credit / Loan</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i
+                    class="fas fa-chart-bar w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Reports</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-slate-800/60 rounded-lg group transition-all">
+                <i class="fas fa-cog w-5 text-center text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                <span class="font-medium text-sm">Settings</span>
+            </a>
+        </nav>
+
+        <!-- Logout -->
+        <div class="p-4 border-t border-slate-700/50 bg-slate-900/30">
+            <!-- href="#" এর পরিবর্তে href="landing.html" ব্যবহার করা হয়েছে -->
+            <a href="landing.html"
+                class="flex items-center gap-3 px-4 py-3 hover:bg-red-500/10 hover:text-red-400 rounded-lg group transition-all text-slate-400">
+                <i class="fas fa-sign-out-alt w-5 text-center transition-colors"></i>
+                <span class="font-medium text-sm">Logout</span>
+            </a>
+            <div class="mt-4 text-center text-[10px] text-slate-500">
+                v1.0.0
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full relative overflow-y-auto overflow-x-hidden">
+
+        <!-- Mobile Header Toggle (Visible only on small screens) -->
+        <div class="md:hidden flex items-center justify-between p-4 bg-white border-b shadow-sm sticky top-0 z-30">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-cogs text-blue-600 text-xl"></i>
+                <span class="font-bold text-slate-800">PSSC TECH</span>
+            </div>
+            <button class="text-slate-600 p-2"><i class="fas fa-bars text-xl"></i></button>
+        </div>
+
+        <div class="p-6 md:p-8 max-w-[1600px] w-full mx-auto space-y-6">
+
+            <!-- Header Section -->
+            <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-2">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Parvez Sewing & Servicing
+                        Center</h2>
+                    <p class="text-slate-500 text-sm mt-1 flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-slate-400"></i> Shahibag, Savar, Dhaka-1340
+                    </p>
+                </div>
+
+                <div
+                    class="flex items-center gap-4 md:gap-6 bg-white py-2 px-4 rounded-full shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-2 text-slate-600 text-sm font-medium">
+                        <i class="far fa-calendar-alt text-blue-500"></i>
+                        <span id="live-date">Loading date...</span>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- KPI Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <!-- Total Services -->
+                <div
+                    class="bg-blue-50/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                    <div
+                        class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-blue-900/70 text-sm font-semibold mb-1">Total Services</p>
+                            <p class="text-xs text-blue-800/60 mb-1">(This Month)</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-blue-500 text-white flex items-center justify-center shadow-sm">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-end gap-3">
+                        <h3 class="text-3xl font-bold text-blue-900">124</h3>
+                        <span
+                            class="text-emerald-600 text-sm font-medium bg-emerald-100 px-2 py-0.5 rounded-full mb-1 flex items-center gap-1">
+                            <i class="fas fa-arrow-up text-[10px]"></i> 12%
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Total Sales -->
+                <div
+                    class="bg-emerald-50/80 backdrop-blur-sm border border-emerald-100 rounded-2xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                    <div
+                        class="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-emerald-900/70 text-sm font-semibold mb-1">Total Sales</p>
+                            <p class="text-xs text-emerald-800/60 mb-1">(This Month)</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-emerald-500 text-white flex items-center justify-center shadow-sm">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-end gap-3">
+                        <h3 class="text-3xl font-bold text-emerald-900 tracking-tight">৳ 245,000</h3>
+                        <span
+                            class="text-emerald-600 text-sm font-medium bg-emerald-100 px-2 py-0.5 rounded-full mb-1 flex items-center gap-1">
+                            <i class="fas fa-arrow-up text-[10px]"></i> 18%
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Current Stock -->
+                <div
+                    class="bg-purple-50/80 backdrop-blur-sm border border-purple-100 rounded-2xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                    <div
+                        class="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-purple-900/70 text-sm font-semibold mb-1">Current Stock</p>
+                            <p class="text-xs text-purple-800/60 mb-1">(Items)</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-purple-500 text-white flex items-center justify-center shadow-sm">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-end gap-3">
+                        <h3 class="text-3xl font-bold text-purple-900">358</h3>
+                    </div>
+                </div>
+
+                <!-- Pending Dues -->
+                <div
+                    class="bg-amber-50/80 backdrop-blur-sm border border-amber-100 rounded-2xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                    <div
+                        class="absolute -right-4 -top-4 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-amber-900/70 text-sm font-semibold mb-1">Pending Dues</p>
+                            <p class="text-xs text-amber-800/60 mb-1">(Customers)</p>
+                        </div>
+                        <div class="relative">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center shadow-sm">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div
+                                class="absolute -bottom-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white flex items-center justify-center shadow-sm">
+                                <i class="fas fa-exclamation text-[8px] text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-end gap-3">
+                        <h3 class="text-3xl font-bold text-amber-900 tracking-tight">৳ 72,500</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section: Chart & Recent Activities -->
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                <!-- Monthly Overview Chart -->
+                <div class="xl:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-chart-line text-blue-500 text-xl"></i>
+                            <h3 class="text-lg font-bold text-slate-800">Monthly Overview</h3>
+                        </div>
+                        <div class="flex gap-4 text-sm font-medium">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-blue-500 shadow-sm"></span>
+                                <span class="text-slate-600">Service Income</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-sm"></span>
+                                <span class="text-slate-600">Sales</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[300px] w-full">
+                        <canvas id="overviewChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-list-ul text-blue-500 text-xl"></i>
+                            <h3 class="text-lg font-bold text-slate-800">Recent Activities</h3>
+                        </div>
+                        <a href="#"
+                            class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1">
+                            View All <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex-1 overflow-y-auto pr-2 space-y-5">
+                        <!-- Activity Item 1 -->
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-slate-800 leading-tight mb-1">Service Completed
+                                    <span class="text-slate-500 font-normal">– JACK Sewing Machine</span></p>
+                                <p class="text-xs text-slate-500">by Technician: Rahim</p>
+                            </div>
+                            <div class="text-right flex-shrink-0">
+                                <p class="text-xs font-medium text-slate-700">Today</p>
+                                <p class="text-[11px] text-slate-400">04:20 PM</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item 2 -->
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-slate-800 leading-tight mb-1">Sale <span
+                                        class="text-slate-500 font-normal">– Needle Set (10 Pcs)</span></p>
+                                <p class="text-xs text-slate-500">to: Rahman Enterprise</p>
+                            </div>
+                            <div class="text-right flex-shrink-0">
+                                <p class="text-xs font-medium text-slate-700">Today</p>
+                                <p class="text-[11px] text-slate-400">03:15 PM</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item 3 -->
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-slate-800 leading-tight mb-1">Stock Added <span
+                                        class="text-slate-500 font-normal">– Motor (1200W)</span></p>
+                                <p class="text-xs text-slate-500">Qty: 2</p>
+                            </div>
+                            <div class="text-right flex-shrink-0">
+                                <p class="text-xs font-medium text-slate-700">Today</p>
+                                <p class="text-[11px] text-slate-400">01:50 PM</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item 4 -->
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-100 transition-colors">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-semibold text-slate-800 leading-tight mb-1">Loan Given <span
+                                        class="text-slate-500 font-normal">– BDT 5,000</span></p>
+                                <p class="text-xs text-slate-500">to: Karim Uddin</p>
+                            </div>
+                            <div class="text-right flex-shrink-0">
+                                <p class="text-xs font-medium text-slate-700">Today</p>
+                                <p class="text-[11px] text-slate-400">12:30 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Top Customers, Stock Alerts, Quick Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-8">
+
+                <!-- Top Customers -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-center mb-5">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-user-friends text-blue-500 text-xl"></i>
+                            <h3 class="text-lg font-bold text-slate-800">Top Customers</h3>
+                        </div>
+                        <a href="#"
+                            class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1">
+                            View All <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="space-y-3">
+                        <!-- Customer 1 -->
+                        <div
+                            class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
+                                    1</div>
+                                <span class="font-medium text-slate-800 text-sm">Rahman Enterprise</span>
+                            </div>
+                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded-md">12
+                                Orders</span>
+                        </div>
+                        <!-- Customer 2 -->
+                        <div
+                            class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-md bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold">
+                                    2</div>
+                                <span class="font-medium text-slate-800 text-sm">Karim Uddin</span>
+                            </div>
+                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded-md">10
+                                Orders</span>
+                        </div>
+                        <!-- Customer 3 -->
+                        <div
+                            class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-md bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold">
+                                    3</div>
+                                <span class="font-medium text-slate-800 text-sm">Ahmed Traders</span>
+                            </div>
+                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded-md">8
+                                Orders</span>
+                        </div>
+                        <!-- Customer 4 -->
+                        <div
+                            class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-md bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold">
+                                    4</div>
+                                <span class="font-medium text-slate-800 text-sm">Sarker Sewing House</span>
+                            </div>
+                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded-md">7
+                                Orders</span>
+                        </div>
+                        <!-- Customer 5 -->
+                        <div
+                            class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-md bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold">
+                                    5</div>
+                                <span class="font-medium text-slate-800 text-sm">Beauty Garments</span>
+                            </div>
+                            <span class="text-sm text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded-md">6
+                                Orders</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stock Alert -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-center mb-5">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+                            <h3 class="text-lg font-bold text-slate-800">Stock Alert</h3>
+                        </div>
+                        <a href="#"
+                            class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-1">
+                            View All <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Alert 1 (Critical) -->
+                        <div class="flex items-center gap-4 p-3 border border-red-100 bg-red-50/50 rounded-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-white border border-slate-100 flex items-center justify-center shadow-sm text-2xl">
+                                🧰
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-800 flex items-center gap-1">
+                                    <i class="fas fa-exclamation-circle text-red-500 text-xs"></i> Brake Pad
+                                </p>
+                                <p class="text-xs font-semibold text-red-600">Low Stock (Only 3 Pcs Left)</p>
+                            </div>
+                        </div>
+
+                        <!-- Alert 2 (Warning) -->
+                        <div class="flex items-center gap-4 p-3 border border-amber-100 bg-amber-50/50 rounded-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-white border border-slate-100 flex items-center justify-center shadow-sm text-2xl">
+                                ⚙️
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-800 flex items-center gap-1">
+                                    <i class="fas fa-exclamation-triangle text-amber-500 text-xs"></i> Belt
+                                </p>
+                                <p class="text-xs font-semibold text-amber-600">Reorder Soon (Only 5 Pcs Left)</p>
+                            </div>
+                        </div>
+
+                        <!-- Alert 3 (Good) -->
+                        <div class="flex items-center gap-4 p-3 border border-emerald-100 bg-emerald-50/50 rounded-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-white border border-slate-100 flex items-center justify-center shadow-sm text-2xl text-slate-400">
+                                📍
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-800 flex items-center gap-1">
+                                    Needle
+                                </p>
+                                <p class="text-xs font-semibold text-emerald-600">In Stock (200 Pcs)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fas fa-bolt text-blue-500 text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-800">Quick Actions</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <button
+                            class="w-full flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl shadow-sm shadow-blue-500/30 transition-all active:scale-[0.98]">
+                            <i class="fas fa-wrench"></i> New Service
+                        </button>
+                        <button
+                            class="w-full flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-3 px-4 rounded-xl shadow-sm shadow-emerald-500/30 transition-all active:scale-[0.98]">
+                            <i class="fas fa-shopping-cart"></i> New Sale
+                        </button>
+                        <button
+                            class="w-full flex items-center justify-center gap-3 bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-4 rounded-xl shadow-sm shadow-purple-500/30 transition-all active:scale-[0.98]">
+                            <i class="fas fa-box"></i> Add Stock
+                        </button>
+                        <button
+                            class="w-full flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-xl shadow-sm shadow-amber-500/30 transition-all active:scale-[0.98]">
+                            <i class="fas fa-chart-bar"></i> Generate Report
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer
+            class="mt-auto border-t border-slate-200 bg-white py-4 px-6 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-sm text-slate-500">
+            <div>
+                &copy; 2026 PSSCTECH. All rights reserved.
+            </div>
+            <div>
+                Powered by Business Management System <span class="text-slate-400">v1.0</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Chart Configuration -->
+    <script src="script.js"></script>
+</body>
+
+</html>
